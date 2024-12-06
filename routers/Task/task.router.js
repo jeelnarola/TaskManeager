@@ -6,11 +6,12 @@ const taskRouter = Router()
 
 
 taskRouter.get('/show',allTask)
+taskRouter.get('/tasks',TaskFiltering)
+
 taskRouter.post('/add',AddTask)
 
 taskRouter.patch('/taskUpdate/:TaskID',UpdateTask)
 taskRouter.delete('/taskDelete/:DeleteTaskID',DeleteTask)
 
-taskRouter.get('/tasks',TaskFiltering)
 
 module.exports=taskRouter

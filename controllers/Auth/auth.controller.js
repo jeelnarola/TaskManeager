@@ -14,7 +14,7 @@ let otp=Math.floor(100000 + Math.random() * 900000);
 
 const register = async(req,res)=>{
     try {
-        const {email,password,username,image,role,...otherFields}= req.body
+        const {email,password,username,role,...otherFields}= req.body
         if(!email || !password || !username){
             return res.status(400).json({success:false,message:"All Fields Are Required"})
         }
@@ -40,7 +40,6 @@ const register = async(req,res)=>{
             email,
             password,
             username,
-            image,
             role
         })
         generateTokenAndCookieSet(newUser._id,res)

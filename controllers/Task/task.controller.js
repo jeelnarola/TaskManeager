@@ -3,7 +3,6 @@ const User = require("../../models/user.models")
 
 const allTask = async(req,res)=>{
     try {
-        console.log("User",req.user)
         if(req.user.role === 'user'){
             console.log(req.user.id)
             let userTask = await Task.find({createdBy:req.user.id})
