@@ -11,7 +11,7 @@
 - forgetPassword With Email Send To OTP.
 
 ## Project Link.
-- [This Project Github Link](https://github.com/jeelnarola/blogPersonal.git)
+- [This Project Github Link](https://github.com/jeelnarola/TaskManeager.git)
 <!-- - Live Link :- https://blogpersonal-nlcc.onrender.com/ -->
 
 ## Follow these instructions strictly.
