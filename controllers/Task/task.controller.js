@@ -4,7 +4,6 @@ const User = require("../../models/user.models")
 const allTask = async(req,res)=>{
     try {
         if(req.user.role === 'user'){
-            console.log(req.user.id)
             let userTask = await Task.find({createdBy:req.user.id})
             res.status(201).send({success:true,message:userTask})
         }
@@ -110,7 +109,6 @@ const DeleteTask = async(req,res)=>{
     try {
         let UserCheck = await Task.findOne({_id:DeleteTaskID})
         let Users = await User.findOne({_id:UserCheck.createdBy})
-        console.log("abcd",Users)
         if(Users.role === 'user'){
             let data= await Task.findByIdAndDelete(DeleteTaskID)
             res.status(200).send({ success: true, message: 'Task Delete successfully.', task: data});

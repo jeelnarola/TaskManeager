@@ -27,7 +27,6 @@ const UserSchema = mongoose.Schema({
 })
 UserSchema.pre('save',async function (next) {
     let user = this;
-    console.log("This",user)
     if (!user.isModified('password')) return next();
     try {
         const saltRounds = 10;
@@ -40,8 +39,6 @@ UserSchema.pre('save',async function (next) {
 })
 
 UserSchema.methods.comparePassword= async function(candidatePassword) {
-    console.log("password",candidatePassword);
-    
     try {
        return await bcrypt.compare(candidatePassword,this.password)
     } catch (error) {

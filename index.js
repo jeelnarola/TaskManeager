@@ -18,7 +18,6 @@ app.use('/task',TaskMange,taskRouter)
 app.get('/',(req,res)=>{
     res.status(201).json({success:true,message:"welcome To task Management App..."})
 })
-console.log(process.env.PORT)
 app.listen(process.env.PORT,()=>{
     console.log(`Server Start`)
     Databse()
